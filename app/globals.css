@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+@media print {
+  @page regularDocument {
+    size: letter;
+    margin: 8mm;
+  }
+
+  @page thermalDocument {
+    size: 80mm 297mm;
+    margin: 4mm;
+  }
+
+  .print-hidden,
+  aside,
+  nav,
+  button,
+  .lucide {
+    display: none !important;
+  }
+
+  body,
+  main,
+  .print-full-width {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html,
+  body {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .break-inside-avoid {
+    break-inside: avoid;
+  }
+
+  .print-document-shell {
+    min-height: 0 !important;
+    background: white !important;
+  }
+
+  .print-document {
+    page: regularDocument;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    color: #020617 !important;
+    font-size: 9.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-document-header {
+    margin-bottom: 10px !important;
+    padding-bottom: 8px !important;
+    border-bottom-width: 2px !important;
+  }
+
+  .print-document-logo {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 8px !important;
+    font-size: 16px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .print-document-brand {
+    font-size: 8px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .print-document-heading {
+    margin-top: 4px !important;
+    font-size: 20px !important;
+    line-height: 1.05 !important;
+  }
+
+  .print-document-subtitle,
+  .print-document-business {
+    font-size: 9px !important;
+    line-height: 1.25 !important;
+  }
+
+  .document-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 4px 12px !important;
+    margin-bottom: 10px !important;
+    padding: 8px !important;
+    border-radius: 8px !important;
+  }
+
+  .document-row {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    font-size: 9px !important;
+    break-inside: avoid !important;
+  }
+
+  .sale-receipt-table {
+    font-size: 8.8px !important;
+    line-height: 1.15 !important;
+  }
+
+  .sale-receipt-table th,
+  .sale-receipt-table td {
+    padding: 4px 5px !important;
+    break-inside: avoid !important;
+  }
+
+  .receipt-item-image {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 5px !important;
+  }
+
+  .document-totals {
+    margin-top: 10px !important;
+    max-width: 210px !important;
+    padding: 8px !important;
+    border-radius: 8px !important;
+    break-inside: avoid !important;
+  }
+
+  .document-footer-note {
+    margin-top: 10px !important;
+    padding: 8px !important;
+    border-radius: 8px !important;
+    font-size: 8px !important;
+    letter-spacing: 0.08em !important;
+    break-inside: avoid !important;
+  }
+
+  body[data-print-mode="thermal"] .print-document {
+    page: thermalDocument;
+    width: 72mm !important;
+    max-width: 72mm !important;
+    margin: 0 auto !important;
+    font-size: 8px !important;
+    line-height: 1.12 !important;
+  }
+
+  body[data-print-mode="thermal"] .print-document-header {
+    margin-bottom: 7px !important;
+    padding-bottom: 6px !important;
+    text-align: center !important;
+  }
+
+  body[data-print-mode="thermal"] .print-document-header-grid {
+    display: block !important;
+  }
+
+  body[data-print-mode="thermal"] .print-document-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  body[data-print-mode="thermal"] .print-document-logo {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 13px !important;
+  }
+
+  body[data-print-mode="thermal"] .print-document-heading {
+    font-size: 13px !important;
+  }
+
+  body[data-print-mode="thermal"] .print-document-business {
+    margin-top: 6px !important;
+    text-align: center !important;
+    font-size: 7.5px !important;
+  }
+
+  body[data-print-mode="thermal"] .document-meta {
+    display: block !important;
+    padding: 6px !important;
+    margin-bottom: 7px !important;
+  }
+
+  body[data-print-mode="thermal"] .document-row {
+    gap: 6px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    font-size: 7.5px !important;
+  }
+
+  body[data-print-mode="thermal"] .sale-receipt-table {
+    font-size: 7px !important;
+    table-layout: fixed !important;
+  }
+
+  body[data-print-mode="thermal"] .sale-receipt-table th,
+  body[data-print-mode="thermal"] .sale-receipt-table td {
+    padding: 3px 2px !important;
+  }
+
+  body[data-print-mode="thermal"] .sale-receipt-table th:nth-child(1),
+  body[data-print-mode="thermal"] .sale-receipt-table td:nth-child(1) {
+    width: 42% !important;
+  }
+
+  body[data-print-mode="thermal"] .sale-receipt-table th:nth-child(2),
+  body[data-print-mode="thermal"] .sale-receipt-table td:nth-child(2) {
+    width: 13% !important;
+  }
+
+  body[data-print-mode="thermal"] .sale-receipt-table th:nth-child(3),
+  body[data-print-mode="thermal"] .sale-receipt-table td:nth-child(3),
+  body[data-print-mode="thermal"] .sale-receipt-table th:nth-child(4),
+  body[data-print-mode="thermal"] .sale-receipt-table td:nth-child(4) {
+    width: 22.5% !important;
+  }
+
+  body[data-print-mode="thermal"] .quotation-document-table th:nth-child(1),
+  body[data-print-mode="thermal"] .quotation-document-table td:nth-child(1) {
+    width: 6% !important;
+  }
+
+  body[data-print-mode="thermal"] .quotation-document-table th:nth-child(2),
+  body[data-print-mode="thermal"] .quotation-document-table td:nth-child(2) {
+    width: 14% !important;
+  }
+
+  body[data-print-mode="thermal"] .quotation-document-table th:nth-child(3),
+  body[data-print-mode="thermal"] .quotation-document-table td:nth-child(3) {
+    width: 28% !important;
+  }
+
+  body[data-print-mode="thermal"] .quotation-document-table th:nth-child(4),
+  body[data-print-mode="thermal"] .quotation-document-table td:nth-child(4) {
+    width: 8% !important;
+  }
+
+  body[data-print-mode="thermal"] .quotation-document-table th:nth-child(5),
+  body[data-print-mode="thermal"] .quotation-document-table td:nth-child(5) {
+    width: 14% !important;
+  }
+
+  body[data-print-mode="thermal"] .quotation-document-table th:nth-child(6),
+  body[data-print-mode="thermal"] .quotation-document-table td:nth-child(6) {
+    width: 14% !important;
+  }
+
+  body[data-print-mode="thermal"] .quotation-document-table th:nth-child(7),
+  body[data-print-mode="thermal"] .quotation-document-table td:nth-child(7) {
+    width: 16% !important;
+  }
+
+  body[data-print-mode="thermal"] .receipt-item-image {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 3px !important;
+  }
+
+  body[data-print-mode="thermal"] .document-totals {
+    max-width: none !important;
+    width: 100% !important;
+    padding: 6px !important;
+  }
+
+  body[data-print-mode="thermal"] .document-footer-note {
+    padding: 6px !important;
+    font-size: 7px !important;
+  }
+}

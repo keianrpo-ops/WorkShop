@@ -1,0 +1,20 @@
+alter table public.vehicles add column if not exists vin text;
+alter table public.vehicles add column if not exists color text;
+alter table public.vehicles add column if not exists fuel_type text;
+alter table public.vehicles add column if not exists transmission text;
+alter table public.vehicles add column if not exists engine text;
+alter table public.vehicles add column if not exists oil_type text;
+alter table public.vehicles add column if not exists last_oil_change_mileage integer;
+alter table public.vehicles add column if not exists last_oil_change_date date;
+alter table public.vehicles add column if not exists next_oil_change_mileage integer;
+alter table public.vehicles add column if not exists next_oil_change_date date;
+alter table public.vehicles add column if not exists battery_status text;
+alter table public.vehicles add column if not exists tire_status text;
+alter table public.vehicles add column if not exists brake_status text;
+alter table public.vehicles add column if not exists soat_expiration date;
+alter table public.vehicles add column if not exists technical_review_expiration date;
+alter table public.vehicles add column if not exists maintenance_notes text;
+
+create index if not exists idx_vehicles_vin on public.vehicles(vin);
+create index if not exists idx_vehicles_soat_expiration on public.vehicles(soat_expiration);
+create index if not exists idx_vehicles_technical_review_expiration on public.vehicles(technical_review_expiration);
